@@ -1,0 +1,12 @@
+node-config:
+  node-type: EVENT_CENTER
+  tcp-addr:
+    port: 12051
+  http-addr:
+    port: 22051
+  weight: 1
+
+consul:
+  address: 10.10.9.246:8500
+  scheme: http
+  port: 88
