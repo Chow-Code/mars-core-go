@@ -2,6 +2,7 @@ package app
 
 import (
 	log "github.com/sirupsen/logrus"
+	"mars-go/consul"
 	"mars-go/node"
 )
 
@@ -14,8 +15,14 @@ func Run(configPath string) {
 	nodeConfig, err := node.Load(configPath)
 	if err != nil {
 		log.Info(err.Error())
-		log.Info("======== 配置加载失败, 进程结束 ========")
+		log.Info("======== 节点配置加载失败, 进程结束 ========")
 		return
 	}
 	log.Info("配置加载成功 nodeConfig:", nodeConfig)
+	err = consul.Init(nodeConfig, configPath, "")
+	if err != nil {
+		log.Info(err.Error())
+		log.Info("======== consul启动失败 ========")
+	}
+	log.Info("======== consul注册成功 ========")
 }

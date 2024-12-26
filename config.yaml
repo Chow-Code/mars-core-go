@@ -10,3 +10,7 @@ consul:
   address: 10.10.9.246:8500
   scheme: http
   port: 88
+  check-timeout: 5s
+  check-interval: 5s
+  deregister: 40s
+  default-status: "passing"
