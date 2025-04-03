@@ -1,9 +1,9 @@
 module mars-go
 
-go 1.19
+go 1.24
 
 require (
-	github.com/armon/go-metrics v0.4.1 // indirect
+	github.coms/armon/go-metrics v0.4.1 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/hashicorp/consul/api v1.31.0 // indirect
